@@ -1,15 +1,18 @@
+require_relative './module'
 class Author
   attr_reader :name
-
+  extend Finder
+  
   @@all=[]
   def initialize(name)
     @name = name
     @@all<<self
   end
 
-  def self.find_by_name(name)
-    Author.all.find{|magazine|magazine.name==name}
-  end
+  # inherited the 'find_by_name' from module Finder
+  # def self.find_by_name(name)
+  #   Author.all.find{|magazine|magazine.name==name}
+  # end
   
   def self.all
     @@all
