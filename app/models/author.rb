@@ -35,6 +35,6 @@ class Author
 
 end
 
-# article cannot exist without an author;cannot exist without an magazine;
+# article cannot exist without an author;cannot exist without a magazine;
 # author can write for a magazine that does not exist
 # magazine cannot exist without articles
