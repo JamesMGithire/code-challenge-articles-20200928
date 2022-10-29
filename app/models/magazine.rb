@@ -17,8 +17,7 @@ class Magazine
     Article.all.filter{|article|article.magazine.name==@name}
   end
   def magazine_authors
-    magazine_articles
-    .map{|article|article.author}
+    magazine_articles.map{|article|Author.find_by_name(article.author)}
   end
   
   def contributors
@@ -39,7 +38,7 @@ class Magazine
   def contributing_authors
     main_authors=[]
     magazine_authors.tally.each{|key,value|value>2 && (main_authors<<key)}
-    main_authors.map{|name|Author.find_by_name(name)}
+    main_authors
   end
 end
 
